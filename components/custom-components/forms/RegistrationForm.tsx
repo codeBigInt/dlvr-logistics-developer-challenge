@@ -15,8 +15,8 @@ import { useQueryClient } from '@tanstack/react-query'
 
 
 const RegistrationForm = () => {
-    const [isRegistering, setIsRegistering] = useState<Boolean>(false)
-    const [isMapListDisplayed, setMapListDisplayed] = useState<Boolean>(false)
+    const [isRegistering, setIsRegistering] = useState<boolean>(false)
+    const [isMapListDisplayed, setMapListDisplayed] = useState<boolean>(false)
     const [place, setPlace] = useState<PlaceType | null>()
     const companyCollection = collection(db, "companies")
     const queryClient = useQueryClient()

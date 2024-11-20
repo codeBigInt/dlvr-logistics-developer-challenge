@@ -4,7 +4,7 @@ import React from 'react'
 import MapViewBox from './MapViewBox'
 
 const MapViewGrid = () => {
-    const { data: companies, error, isLoading } = useGetCompanies()
+    const { data: companies } = useGetCompanies()
 
     return (
         <div className='flex lg:flex-row flex-col gap-1 w-full h-full bg-white'>
