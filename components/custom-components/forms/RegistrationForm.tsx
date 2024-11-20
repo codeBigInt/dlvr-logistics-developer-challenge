@@ -37,7 +37,6 @@ const RegistrationForm = () => {
     const {
         data: suggestions = [],
         isLoading,
-        error
     } = useLocationSearch(watchAddresField)
 
     const handleRegister = async (data: FormData) => {
