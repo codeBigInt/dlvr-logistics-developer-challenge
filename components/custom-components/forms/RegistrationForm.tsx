@@ -107,7 +107,7 @@ const RegistrationForm = () => {
                                                         />
                                                         <LocateFixedIcon />
                                                     </div>
-                                                    {isMapListDisplayed && <MapList onSelectItem={() => setMapListDisplayed(false)} setPlace={setPlace} form={form} mapList={suggestions} loading={isLoading} error={error} />}
+                                                    {isMapListDisplayed && <MapList onSelectItem={() => setMapListDisplayed(false)} setPlace={setPlace} form={form} mapList={suggestions} loading={isLoading} />}
                                                 </div>
                                             ) : (
                                                 <input

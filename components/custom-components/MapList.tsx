@@ -5,7 +5,6 @@ import { UseFormReturn } from 'react-hook-form';
 interface MapListProps {
     mapList: MapData[]
     loading: boolean;
-    error: Error | null;
     form: UseFormReturn<{
         companyName: string;
         email: string;
@@ -15,7 +14,7 @@ interface MapListProps {
     setPlace: (value: PlaceType) => void;
     onSelectItem?: () => void;
 }
-const MapList = ({ mapList, loading, error, form, setPlace, onSelectItem }: MapListProps) => {
+const MapList = ({ mapList, loading, form, setPlace, onSelectItem }: MapListProps) => {
     const handleSelection = (mapItem: MapData) => {
         form.setValue("address", mapItem.display_name)
         setPlace({
@@ -31,10 +30,6 @@ const MapList = ({ mapList, loading, error, form, setPlace, onSelectItem }: MapL
             {loading ? (
                 <div className='flex items-center py-6 justify-center w-full h-full'>
                     <p className='flex items-center gap-2 justify-center'><span><Loader className='animate-spin' /></span> Loading</p>
-                </div>
-            ) : error ? (
-                <div className='text-red-500 py-6 w-full text-center'>
-                    {error.message}
                 </div>
             ) : mapList.length > 0 ? (
                 <div className='w-full h-full flex flex-col'>

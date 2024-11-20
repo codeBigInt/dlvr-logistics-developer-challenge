@@ -1,11 +1,11 @@
-import React, { useEffect, useRef } from 'react'
-import { Loader } from "@googlemaps/js-api-loader"
+import React, { useRef } from 'react'
+// import { Loader } from "@googlemaps/js-api-loader"
 import Image from 'next/image'
 import { PlaceType } from '@/app/utils/types'
 
 const MapViewBox = ({ addressInfo }: { addressInfo: PlaceType, company_name: string, email: string, phone: string }) => {
     const mapRef = useRef<HTMLDivElement>(null)
-    const { lat, long, place, address } = addressInfo
+    const { lat, long, place } = addressInfo
     const API_KEY = process.env.NEXT_PUBLIC_MAP_TILLER_API_KEY
     // useEffect(() => {
 
