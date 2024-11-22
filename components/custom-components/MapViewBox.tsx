@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import Image from 'next/image'
 import { PlaceType } from '@/app/utils/types'
 import CompanyDetail from './CompanyDetail'
