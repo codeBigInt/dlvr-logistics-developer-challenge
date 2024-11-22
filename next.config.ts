@@ -7,7 +7,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "api.maptiler.com",
+        hostname: "api.mapbox.com",
         port: "",
         pathname: "/**"
       }

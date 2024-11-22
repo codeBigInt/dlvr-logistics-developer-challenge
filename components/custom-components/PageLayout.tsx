@@ -13,6 +13,7 @@ const PageLayout = ({ children, poppins }: { children: React.ReactNode, poppins:
             >
                 <QueryClientProvider client={queryClient}>
                     {children}
+                    <div id="modal-box"></div>
                 </QueryClientProvider>
             </body>
         </html>

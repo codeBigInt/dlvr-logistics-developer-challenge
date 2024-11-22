@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@googlemaps/js-api-loader':
-        specifier: ^1.16.8
-        version: 1.16.8
       '@hookform/resolvers':
         specifier: ^3.9.1
         version: 3.9.1(react-hook-form@7.53.2(react@19.0.0-rc-66855b96-20241106))
@@ -47,6 +44,9 @@ importers:
       react-hook-form:
         specifier: ^7.53.2
         version: 7.53.2(react@19.0.0-rc-66855b96-20241106)
+      sweetalert2:
+        specifier: ^11.14.5
+        version: 11.14.5
       tailwind-merge:
         specifier: ^2.5.4
         version: 2.5.4
@@ -60,12 +60,6 @@ importers:
       '@tanstack/eslint-plugin-query':
         specifier: ^5.60.1
         version: 5.60.1(eslint@8.57.1)(typescript@5.6.3)
-      '@types/google.maps':
-        specifier: ^3.58.1
-        version: 3.58.1
-      '@types/leaflet':
-        specifier: ^1.9.14
-        version: 1.9.14
       '@types/node':
         specifier: ^20
         version: 20.17.6
@@ -327,9 +321,6 @@ packages:
 
   '@firebase/webchannel-wrapper@1.0.3':
     resolution: {integrity: sha512-2xCRM9q9FlzGZCdgDMJwc0gyUkWFtkosy7Xxr6sFgQwn+wMNIWd7xIvYNauU1r64B5L5rsGKy/n9TKJ0aAFeqQ==}
-
-  '@googlemaps/js-api-loader@1.16.8':
-    resolution: {integrity: sha512-CROqqwfKotdO6EBjZO/gQGVTbeDps5V7Mt9+8+5Q+jTg5CRMi3Ii/L9PmV3USROrt2uWxtGzJHORmByxyo9pSQ==}
 
   '@grpc/grpc-js@1.9.15':
     resolution: {integrity: sha512-nqE7Hc0AzI+euzUwDAy0aY5hCp10r734gMGRdU+qOPX0XSceI2ULrcXB5U2xSc5VkWwalCj4M7GzCAygZl2KoQ==}
@@ -658,17 +649,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@types/geojson@7946.0.14':
-    resolution: {integrity: sha512-WCfD5Ht3ZesJUsONdhvm84dmzWOiOzOAqOncN0++w0lBw1o8OuDNJF2McvvCef/yBqb/HYRahp1BYtODFQ8bRg==}
-
-  '@types/google.maps@3.58.1':
-    resolution: {integrity: sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ==}
-
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
-
-  '@types/leaflet@1.9.14':
-    resolution: {integrity: sha512-sx2q6MDJaajwhKeVgPSvqXd8rhNJSTA3tMidQGduZn9S6WBYxDkCpSpV5xXEmSg7Cgdk/5vJGhVF1kMYLzauBg==}
 
   '@types/node@20.17.6':
     resolution: {integrity: sha512-VEI7OdvK2wP7XHnsuXbAJnEpEkF6NjSN45QJlL4VGqZSXsnicpesdTWsg9RISeSdYd3yeRj/y3k5KGjUXYnFwQ==}
@@ -1958,6 +1940,9 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  sweetalert2@11.14.5:
+    resolution: {integrity: sha512-8MWk5uc/r6bWhiJWkUXyEuApfXAhSCZT8FFX7pZXL7YwaPxq+9Ynhi2dUzWkOFn9jvLjKj22CXuccZ+IHcnjvQ==}
+
   tailwind-merge@2.5.4:
     resolution: {integrity: sha512-0q8cfZHMu9nuYP/b5Shb7Y7Sh1B7Nnl5GqNr1U+n2p6+mybvRtayrQ+0042Z5byvTA8ihjlP8Odo8/VnHbZu4Q==}
 
@@ -2461,8 +2446,6 @@ snapshots:
 
   '@firebase/webchannel-wrapper@1.0.3': {}
 
-  '@googlemaps/js-api-loader@1.16.8': {}
-
   '@grpc/grpc-js@1.9.15':
     dependencies:
       '@grpc/proto-loader': 0.7.13
@@ -2718,15 +2701,7 @@ snapshots:
       '@tanstack/query-core': 5.60.6
       react: 19.0.0-rc-66855b96-20241106
 
-  '@types/geojson@7946.0.14': {}
-
-  '@types/google.maps@3.58.1': {}
-
   '@types/json5@0.0.29': {}
-
-  '@types/leaflet@1.9.14':
-    dependencies:
-      '@types/geojson': 7946.0.14
 
   '@types/node@20.17.6':
     dependencies:
@@ -4273,6 +4248,8 @@ snapshots:
       has-flag: 4.0.0
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  sweetalert2@11.14.5: {}
 
   tailwind-merge@2.5.4: {}
 

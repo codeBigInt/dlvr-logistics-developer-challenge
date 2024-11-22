@@ -16,10 +16,18 @@ export interface MapData {
 }
 
 export interface PlaceType {
-    address: string;
-    lat: string;
-    long: string;
-    place: string;
+    address?: string;
+    lat?: string;
+    long?: string;
+    place?: string;
+}
+
+export interface BookingType {
+    name: string;
+    address: PlaceType;
+    email: string;
+    phone: string;
+    date: string;
 }
 
 export interface GetCompanyResponse {

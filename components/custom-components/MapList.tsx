@@ -1,22 +1,23 @@
 import { MapData, PlaceType } from '@/app/utils/types';
-import { Loader } from 'lucide-react';
-import React from 'react'
-import { UseFormReturn } from 'react-hook-form';
-interface MapListProps {
-    mapList: MapData[]
-    loading: boolean;
-    form: UseFormReturn<{
-        companyName: string;
-        email: string;
-        phone: string;
-        address: string;
-    }, any, undefined>;
+import { Loader, Search } from 'lucide-react';
+import React, { useState } from 'react'
+import { Path, PathValue, UseFormReturn } from 'react-hook-form';
+import { useLocationSearch } from '@/app/utils/query';
+import { z } from "zod"
+
+interface MapListProps<T extends z.ZodTypeAny> {
+    form: UseFormReturn<z.infer<T>>;
     setPlace: (value: PlaceType) => void;
     onSelectItem?: () => void;
 }
-const MapList = ({ mapList, loading, form, setPlace, onSelectItem }: MapListProps) => {
+const MapList = <T extends z.ZodTypeAny>({ form, setPlace, onSelectItem }: MapListProps<T>) => {
+    const [searchQuery, setSearchQuery] = useState("")
+    const {
+        data: suggestions = [],
+        isLoading,
+    } = useLocationSearch(searchQuery)
     const handleSelection = (mapItem: MapData) => {
-        form.setValue("address", mapItem.display_name)
+        form.setValue("address" as Path<z.infer<T>>, mapItem.display_name as PathValue<z.infer<T>, Path<z.infer<T>>>)
         setPlace({
             address: mapItem.display_name,
             lat: mapItem.lat,
@@ -26,16 +27,20 @@ const MapList = ({ mapList, loading, form, setPlace, onSelectItem }: MapListProp
         onSelectItem?.()
     }
     return (
-        <div className='w-full flex flex-col items-center bg-white p-4 mt-2 rounded-lg absolute left-0 overflow-x-hidden overflow-y-scroll max-h-[220px] shadow-xl border border-gray-400'>
-            {loading ? (
+        <div className='w-full flex flex-col items-center bg-white p-4 mt-2 rounded-lg absolute left-0 overflow-x-hidden overflow-y-auto max-h-[220px] shadow-xl border border-gray-400'>
+            <div className='flex items-center pl-2 gap-2 border border-gray-500 rounded-lg w-full'>
+                <Search />
+                <input className='py-3 w-[90%] border-none rounded-r-lg outline-none flex-1' type='text' placeholder='Search address..' onChange={(e) => setSearchQuery(e.target.value)} />
+            </div>
+            {isLoading ? (
                 <div className='flex items-center py-6 justify-center w-full h-full'>
                     <p className='flex items-center gap-2 justify-center'><span><Loader className='animate-spin' /></span> Loading</p>
                 </div>
-            ) : mapList.length > 0 ? (
+            ) : suggestions.length > 0 ? (
                 <div className='w-full h-full flex flex-col'>
-                    {mapList.map((mapItem, index) => (
+                    {suggestions.map((mapItem, index) => (
                         <div
-                            className={`w-full px-2 py-6 hover:bg-gray-100 cursor-pointer ${index !== (mapList.length - 1) ? "border-b-[1px] border-b-gray-500" : ""
+                            className={`w-full px-2 py-6 hover:bg-gray-100 cursor-pointer ${index !== (suggestions.length - 1) ? "border-b-[1px] border-b-gray-500" : ""
                                 }`}
                             key={mapItem.place_id}
                             onClick={() => handleSelection(mapItem)}
