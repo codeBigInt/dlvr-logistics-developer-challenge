@@ -46,7 +46,7 @@ const BookingForm = ({ onOpenChange }: { onOpenChange: () => void }) => {
             form.reset();
         } catch (error) {
             showErrorAlert("Error Occured", "Failed to add booking")
-            console.error("Failed to register company.")
+            console.error(error)
         } finally {
             setIsBooking(false)
         }
