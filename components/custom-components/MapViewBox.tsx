@@ -25,7 +25,7 @@ const MapViewBox = ({ addressInfo, company_name, email, phone, index, onToggleDe
                 onClick={() => {
                     onToggleDetail(isDetailsDisplayed ? null : index)
                 }}
-                className='relative w-full md:h-[300px] h-[400px]' ref={mapRef}>
+                className='relative w-full md:h-[300px] h-[300px]' ref={mapRef}>
                 <Image
                     src={mapboxUrl}
                     alt={place as string}

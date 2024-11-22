@@ -26,8 +26,8 @@ const MapViewGrid = () => {
                 </div>
             ) :
                 (
-                    (companies?.length || 0) > 0? (
-                        <div className='flex gap-1 md:flex-row w-full flex-wrap flex-col rounded-lg'>
+                    companies && companies?.length > 0 ? (
+                        <div className='flex md:gap-1 gap-2 md:flex-row w-full flex-wrap flex-col rounded-lg'>
                             {
                                 companies?.map((company, index) => (
                                     <MapViewBox

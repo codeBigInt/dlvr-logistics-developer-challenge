@@ -45,7 +45,7 @@ const RegistrationForm = () => {
         try {
             await addDoc(companyCollection, newCompanyDetail)
             setIsRegistering(false)
-            showSuccessAlert("Booked successfully", "Your booking order has been added")
+            showSuccessAlert("Booked successfully", "Your booking order has been added. Scroll to view your company")
             queryClient.invalidateQueries({ queryKey: ["companies"] })
             form.reset();
         } catch {
