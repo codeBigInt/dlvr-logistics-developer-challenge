@@ -27,7 +27,7 @@ const MapList = <T extends z.ZodTypeAny>({ form, setPlace, onSelectItem }: MapLi
         onSelectItem?.()
     }
     return (
-        <div className='w-full flex flex-col items-center bg-white p-4 mt-2 rounded-lg absolute left-0 overflow-x-hidden overflow-y-auto max-h-[220px] shadow-xl border border-gray-400'>
+        <div className='w-full flex flex-col items-center bg-white p-4 mt-2 rounded-lg absolute left-0 overflow-x-hidden overflow-y-auto min-h-[240px] max-h-[250px] shadow-xl border border-gray-400'>
             <div className='flex items-center pl-2 gap-2 border border-gray-500 rounded-lg w-full'>
                 <Search />
                 <input className='py-3 w-[90%] border-none rounded-r-lg outline-none flex-1' type='text' placeholder='Search address..' onChange={(e) => setSearchQuery(e.target.value)} />
