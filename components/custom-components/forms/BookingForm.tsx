@@ -7,6 +7,7 @@ import { bookingFormFields } from '@/app/utils/formFieldArray'
 import { PlaceType } from '@/app/utils/types'
 import { addBooking, showErrorAlert, showSuccessAlert } from '@/app/utils/action'
 import CustomForm from './Form'
+import { X } from 'lucide-react'
 
 
 const BookingForm = ({ onOpenChange }: { onOpenChange: () => void }) => {
@@ -54,8 +55,11 @@ const BookingForm = ({ onOpenChange }: { onOpenChange: () => void }) => {
 
 
     return (
-        <div className='h-max w-full bg-white rounded-lg md:p-6 p-3'>
-            <h3 className='py-6 text-2xl font-light'>Book Delivery</h3>
+        <div className='h-max w-full bg-white rounded-lg md:p-6 p-6'>
+            <div className='flex items-center justify-between'>
+                <h3 className='py-6 text-2xl font-light'>Book Delivery</h3>
+                <span onClick={onOpenChange} className='p-3 border border-gray-500 rounded-lg'><X size={16} /></span>
+            </div>
             <CustomForm
                 formFields={bookingFormFields}
                 formType={form}

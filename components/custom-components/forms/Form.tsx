@@ -67,7 +67,7 @@ const CustomForm = <T extends z.ZodTypeAny>({formType, formFields, setPlace, isS
                                                     value={field.value || ""}
                                                     placeholder={formField.placeholder}
                                                     type={formField.type === "number" ? "tel" : formField.type}
-                                                    className={`border border-gray-500 rounded-lg p-3 outline-none`}
+                                                    className={`border w-full border-gray-500 rounded-lg p-3 outline-none`}
                                                 />
                                             ))}
                                             <p className='text-red-400 text-[12px]'>{String(formType.formState.errors?.[formField.name]?.message || "")}</p>
