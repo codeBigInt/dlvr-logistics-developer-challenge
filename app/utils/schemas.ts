@@ -3,14 +3,14 @@ import { z } from "zod"
 export const registerFormSchema = z.object({
     companyName: z.string().min(5, {message: "Please enter a valid company name"}),
     email: z.string().includes("@", {message: "Please enter a valid email"}),
-    phone: z.string().min(10, {message: "Must of 10 digits only (7011******)"}).max(10, {message: "Please enter a valid"}),
+    phone: z.string().min(10, {message: "Must include 10 digits only (7011******)"}).max(10, {message: "Please enter a valid"}),
     address: z.string().min(5, {message: "Please enter a valid address"})
 })
 
 export const bookingFormSchema = z.object({
     name: z.string().min(2, {message: "Please enter a valid name"}),
     email:z.string().min(2, {message: "Please enter a valid email"}),
-    phone: z.string().min(2, {message: "Must be 10 digits only (7011******)"}),
+    phone: z.string().min(2, {message: "Must include 10 digits only (7011******)"}),
     address: z.string().min(5, {message: "Please enter a valid location"}),
     date: z.string().min(5, {message: "Please enter a valid date"})
 })
