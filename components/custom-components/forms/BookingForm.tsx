@@ -21,7 +21,8 @@ const BookingForm = ({ onOpenChange }: { onOpenChange: () => void }) => {
             address: "",
             phone: "",
             date: ""
-        }
+        },
+        mode: 'onChange'
     })
 
     const handleBooking = async (data: BookingFormData) => {

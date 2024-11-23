@@ -25,7 +25,8 @@ const RegistrationForm = () => {
             address: "",
             email: "",
             phone: "",
-        }
+        },
+        mode: 'onChange'
     })
 
     const handleRegister = async (data: FormData) => {

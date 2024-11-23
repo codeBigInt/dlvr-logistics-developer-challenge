@@ -53,7 +53,7 @@ const CustomForm = <T extends z.ZodTypeAny>({formType, formFields, setPlace, isS
                                                 </div>
                                             ) : (formField.name === "address" ? (
                                                 <div className='relative w-full'>
-                                                    <div onClick={() => setMapListDisplayed(true)} className='relative cursor-pointer border w-full pl-3 flex items-center justify-between border-gray-500 rounded-lg'>
+                                                    <div onClick={() => setMapListDisplayed(!isMapListDisplayed)} className='relative cursor-pointer border w-full pl-3 flex items-center justify-between border-gray-500 rounded-lg'>
                                                         <MapPin />
                                                         <span className={`px-2 py-3 cursor-pointer outline-none border-none flex-1 w-[90%] rounded-r-lg`}>{(field.value.length > 30 ? field.value.slice(0, 30) + "....." : field.value) || "Find your address"}</span>
                                                     </div>
