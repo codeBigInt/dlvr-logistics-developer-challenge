@@ -1,8 +1,6 @@
 "use client"
 import { useQuery } from "@tanstack/react-query"
 import { fetchCompanies, fetchLocations } from "./action"
-import { query } from "firebase/firestore"
-
 
 export const useGetCompanies = () => {
     return useQuery({
