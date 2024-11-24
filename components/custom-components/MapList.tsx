@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { Path, PathValue, UseFormReturn } from 'react-hook-form';
 import { useLocationSearch } from '@/app/utils/query';
 import { z } from "zod"
+import useDebounce from '@/app/utils/useDebounce';
 
 interface MapListProps<T extends z.ZodTypeAny> {
     form: UseFormReturn<z.infer<T>>;
@@ -12,10 +13,11 @@ interface MapListProps<T extends z.ZodTypeAny> {
 }
 const MapList = <T extends z.ZodTypeAny>({ form, setPlace, onSelectItem }: MapListProps<T>) => {
     const [searchQuery, setSearchQuery] = useState("")
+    const debouncedValue = useDebounce(searchQuery)
     const {
         data: suggestions = [],
         isLoading,
-    } = useLocationSearch(searchQuery)
+    } = useLocationSearch(debouncedValue)
     const handleSelection = (mapItem: MapData) => {
         form.setValue("address" as Path<z.infer<T>>, mapItem.display_name as PathValue<z.infer<T>, Path<z.infer<T>>>)
         setPlace({
